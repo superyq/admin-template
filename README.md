@@ -1,18 +1,22 @@
-# common-template
+# admin-template
 
 ## 介绍
 
-本项目为基础vue框架，clone后，可在此基础上做深层次开发
+本项目为vue框架构建的基础后台系统，clone后，可在此基础上做深层次开发
+
+![login](./src/assets/login.jpg)
+![home](./src/assets/home.jpg)
 
 ## 依赖
 
-axios、vue-router、scss、pug
+axios、vue-router、axios、scss、pug、axios、element-ui、echarts、vuex
 
 ## 基础配置
 
 1. axios基础封装
 2. 路由基础配置
 3. css清空基础样式
+4. utils基础工具js
 
 ## node命令
 
@@ -24,14 +28,17 @@ axios、vue-router、scss、pug
 
 3> 创建文件的scss文件
 
+例：
+
 ```js
 yarn page login // 创建pages/login/index.vue、scss/pages/login.scss、添加router/routes路由
-yarn page login norouter // 不添加router路由
 ```
 
 2. 重置demo页内容
 
 demo页为开发人员编写demo的地方
+
+例：
 
 ```js
 yarn clear // 快速重置demo页内容

@@ -60,3 +60,41 @@ export function throttle(fn, wait) {
     }
   }
 }
+
+// 数字转单位
+// 例：toUnit(123, 1000, 2) 0.123
+export function toUnit(number, unit, pre = 0) {
+  if(typeof number != 'number') return '非数字'
+
+  let unitL = (unit+"").length - 1
+  let numberL = (number+"").split(".")[0].length
+  let diff = numberL - unitL
+
+  if(diff > 0) {
+    return +`${(number + "").slice(0, diff)}.${(number + "").slice(diff, diff + pre)}`
+  }else {
+    return +`0.${"0".repeat(-diff)}${number}`
+  }
+}
+
+// 获取数组大到小排序
+// arr: 排序数组
+// sort: 1，从小到大。-1，从大到小，
+// params: 如果排序是对象，params为需要排序得参数
+// 例：sort([{num:1}, {num: 11}], -1, "num") 输出 [{num: 11}, {num: 1}]
+// 注释：由于sort函数会改变原数组排序，需要引用深拷贝函数，拷贝数组，这样就不会影响到
+export function sortArr(arr, sort, params = null) {
+  let _arr = deepClone(arr)
+
+  function _sort(a, b) {
+    let _a = params ? a[params] : a
+    let _b = params ? b[params] : b
+
+    if(_a - _b > 0) {
+      return sort
+    }else if(_a - _b < 0) {
+      return -sort
+    }
+  }
+  return _arr.sort(_sort)
+}

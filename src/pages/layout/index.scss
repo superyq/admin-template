@@ -1,0 +1,52 @@
+.page-layout {
+  width: auto;
+  min-width: 810px;
+  min-height: 100vh;
+  margin-left: 180px;
+  padding-top: 40px;
+  padding-bottom: 54px;
+  background-color: #f5f7fa;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+// 侧边导航展开/收缩样式
+.c-aside--fold {
+  margin-left: 64px;
+  .layout-aside {
+    width: 64px;
+    .svg-icon {
+      transform: rotate(180deg);
+    }
+  }
+  .layout-header {
+    left: 64px;
+  }
+  .layout-brand--lg {
+    display: none;
+  }
+  .layout-brand--sm {
+    display: block;
+  }
+  .layout-aside__tool {
+    left: 64px;
+    &:hover {
+      .layout-aside__tool-bg {
+        border-left: 30px solid #d9dee4;
+      }
+    }
+  }
+  .layout-aside__tool-bg {
+    left: 0;
+    right: auto;
+    border-left: 13px solid #d9dee4;
+    border-right: 0 !important;
+  }
+  .layout-aside__tool-btn {
+    left: -7px;
+    right: auto !important;
+  }
+  .layout-tabs {
+    left: 64px;
+  }
+}

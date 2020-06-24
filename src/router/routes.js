@@ -1,3 +1,5 @@
+import children from './system'
+
 const routes = [
   {
     path: '*',
@@ -5,23 +7,21 @@ const routes = [
     component: () => import('@/pages/404')
   },
   {
-    path: '/',
-    redirect: { name: 'login' }
-  },
-  {
     path: '/404',
     component: () => import('@/pages/404')
-  },
-  {
-    path: '/demo',
-    name: 'demo',
-    component: () => import('@/pages/demo')
   },
   {
     path: '/login',
     name: 'login',
     component: () => import('@/pages/login')
   },
+  {
+    path: '/',
+    name: 'system',
+    redirect: { name: 'home' },
+    component: () => import('@/pages/layout'),
+    children
+  }
 ]
 
 export default routes;

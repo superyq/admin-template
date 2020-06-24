@@ -49,18 +49,19 @@ function createCss() {
 // 创建router
 function createRouter() {
   // 写入router
-  fs.readFile('./src/router/routes.js', 'utf-8', (err, data) => {
+  fs.readFile('./src/datas/menu.js', 'utf-8', (err, data) => {
     if (err) return console.log(err);
     let header = data.split('[')[0];
     let bottom = data.split('[')[1].split(']')[1];
     let content = data.split('[')[1].split(']')[0];
 
     content = `${content}  {
-      path: '/${pageName}',
-      component: () => import('@/pages/${pageName}')
+      type: 1,
+      name: '${pageName}',
+      title: '${pageName}'
     },
     `
-    fs.writeFile('./src/router/routes.js', header + "[" + content + "]" + bottom, err => {
+    fs.writeFile('./src/datas/menu.js', header + "[" + content + "]" + bottom, err => {
       if (err) return console.log(err);
     })
   })

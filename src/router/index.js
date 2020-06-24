@@ -24,6 +24,8 @@ VueRouter.prototype.push = function push(location) {
 router.beforeEach((to, from, next) => {
   if(!storage.read('token') && to.name !== 'login') {
     next({ name: 'login' })
+  }else if(storage.read('token') && to.name === 'login') {
+    next({ name: 'home' })
   }else {
     next()
   }

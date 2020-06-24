@@ -1,22 +1,11 @@
 <template lang='pug'>
-  .demo
-    .bar-echarts__box
-      bar-echarts
-    .bar-echarts__box
-      line-echarts
+  .demo demo
 </template>
 <script>
-import barEcharts from '@/components/bar-echarts'
-import lineEcharts from '@/components/line-echarts'
-
 export default {
-  name: 'demo',
-  components: {
-    barEcharts,
-    lineEcharts
-  }
+  name: 'demo'
 }
 </script>
-<style lang='scss'>
+<style lang='scss' scoped>
 @import './index.scss'
 </style>

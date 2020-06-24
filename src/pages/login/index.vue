@@ -69,7 +69,7 @@ export default {
         this.$message.success('登陆成功！');
         this.submitting = false;
         storage.write('token', 'yq666');
-        this.$router.push('/demo');
+        this.$router.push('/home');
       })
     }
   }
