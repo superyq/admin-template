@@ -4,8 +4,8 @@
 
 本项目为vue框架构建的基础后台系统，clone后，可在此基础上做深层次开发
 
-<image url='./src/assets/login.jpg'>
-<image url='./src/assets/home.jpg'>
+<img src='./src/assets/login.jpg'>
+<img src='./src/assets/home.jpg'>
 
 ## 依赖
 
